@@ -39,7 +39,7 @@ services:
     ports:
       - 9093:9093
   grafana:
-    image: grafana/grafana:10.4.0
+    image: grafana/grafana:13.2.2@sha256:ac461fb352abc50da10a51c7d02462e9c05488f11f53f14b3ad79a8145f638a0
     restart: unless-stopped
     ports:
       - "3000:3000"
