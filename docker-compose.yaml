@@ -8,7 +8,7 @@ services:
     ports:
       - "8090:8090"
   prometheus:
-    image: prom/prometheus:v2.45.3
+    image: prom/prometheus:v2.45.3@sha256:1534519c0a215a47840bfa09991b6262fb302989b734fc1073b2844445b04313
     restart: unless-stopped
     volumes:
       - ./prometheus/:/etc/prometheus/
@@ -18,7 +18,7 @@ services:
     ports:
       - "9090:9090"
   node-exporter:
-    image: prom/node-exporter:v1.7.0
+    image: prom/node-exporter:v1.7.0@sha256:4cb2b9019f1757be8482419002cb7afe028fdba35d47958829e4cfeaf6246d80
     restart: unless-stopped
     volumes:
       - /proc:/host/proc:ro
@@ -32,14 +32,14 @@ services:
     ports:
       - 9100:9100
   alertmanager:
-    image: prom/alertmanager:v0.27.0
+    image: prom/alertmanager:v0.27.0@sha256:e13b6ed5cb929eeaee733479dce55e10eb3bc2e9c4586c705a4e8da41e5eacf5
     restart: unless-stopped
     volumes:
       - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
     ports:
       - 9093:9093
   grafana:
-    image: grafana/grafana:10.4.0
+    image: grafana/grafana:10.4.0@sha256:f9811e4e687ffecf1a43adb9b64096c50bc0d7a782f8608530f478b6542de7d5
     restart: unless-stopped
     ports:
       - "3000:3000"
